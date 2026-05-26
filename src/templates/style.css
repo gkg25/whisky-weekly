@@ -1,0 +1,277 @@
+@page {
+  size: A4 portrait;
+  margin: 12mm 13mm;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', 'Yu Gothic', 'Hiragino Sans', 'Meiryo', sans-serif;
+}
+
+html, body {
+  font-size: 9pt;
+  line-height: 1.55;
+  color: #1f1a14;
+  writing-mode: horizontal-tb;
+}
+
+a {
+  color: #6b3010;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.masthead {
+  border-bottom: 3pt solid #6b3010;
+  padding-bottom: 5pt;
+  margin-bottom: 8pt;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.masthead-title {
+  font-family: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 26pt;
+  font-weight: 900;
+  color: #6b3010;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.masthead-subtitle {
+  font-size: 7.5pt;
+  color: #6b3010;
+  letter-spacing: 0.15em;
+  margin-left: 6pt;
+  font-weight: 500;
+}
+
+.masthead-meta {
+  text-align: right;
+  font-size: 8pt;
+  color: #4a3a30;
+}
+
+.masthead-meta .issue {
+  font-weight: 700;
+  font-size: 9pt;
+}
+
+h2.section-heading {
+  font-family: 'Noto Serif JP', 'Yu Mincho', serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #6b3010;
+  border-bottom: 1.2pt solid #6b3010;
+  padding-bottom: 1.5pt;
+  margin-top: 7pt;
+  margin-bottom: 4pt;
+  letter-spacing: 0.03em;
+}
+
+h2.section-heading .count {
+  font-size: 7.5pt;
+  color: #888;
+  font-weight: 400;
+  margin-left: 6pt;
+}
+
+.headlines {
+  background: #faf7f2;
+  border-left: 3pt solid #c39160;
+  padding: 5pt 8pt;
+  margin-bottom: 6pt;
+}
+
+.headlines h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 10pt;
+  font-weight: 700;
+  color: #6b3010;
+  margin-bottom: 3pt;
+}
+
+.headlines ol {
+  padding-left: 14pt;
+  font-size: 8.5pt;
+}
+
+.headlines li {
+  margin-bottom: 1.5pt;
+  line-height: 1.4;
+}
+
+.headlines li strong {
+  font-weight: 700;
+  color: #1f1a14;
+}
+
+.headlines li .source {
+  color: #888;
+  font-size: 7.5pt;
+}
+
+.featured {
+  background: #fffbf3;
+  border: 1pt solid #d8b890;
+  padding: 6pt 8pt;
+  margin-bottom: 6pt;
+}
+
+.featured-label {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #c39160;
+  text-transform: uppercase;
+  margin-bottom: 2pt;
+}
+
+.featured h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1f1a14;
+  line-height: 1.3;
+  margin-bottom: 3pt;
+}
+
+.featured .summary {
+  font-size: 9.5pt;
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 3pt;
+}
+
+.featured .key-facts {
+  font-size: 8pt;
+  color: #555;
+  margin-bottom: 3pt;
+}
+
+.featured .key-facts span {
+  display: inline-block;
+  background: #f0e3d0;
+  padding: 0.5pt 4pt;
+  margin-right: 2pt;
+  border-radius: 2pt;
+}
+
+.featured .meta {
+  font-size: 7.5pt;
+  color: #777;
+}
+
+.category-section {
+  margin-bottom: 4pt;
+}
+
+.columns {
+  column-count: 2;
+  column-gap: 6mm;
+  column-rule: 0.5pt solid #e0d5c5;
+}
+
+.article-card {
+  break-inside: avoid;
+  margin-bottom: 5pt;
+  padding-bottom: 4pt;
+  border-bottom: 0.4pt dotted #c0b0a0;
+}
+
+.article-card:last-child {
+  border-bottom: none;
+}
+
+.article-card h3 {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #1f1a14;
+  line-height: 1.35;
+  margin-bottom: 1.5pt;
+}
+
+.article-card .summary {
+  font-size: 8pt;
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 2pt;
+}
+
+.article-card .meta {
+  font-size: 7pt;
+  color: #888;
+  line-height: 1.3;
+}
+
+.article-card .meta a {
+  color: #6b3010;
+  font-weight: 500;
+}
+
+.article-card .badge {
+  display: inline-block;
+  font-size: 6pt;
+  background: #ede0cc;
+  color: #6b3010;
+  padding: 0.5pt 2.5pt;
+  border-radius: 1.5pt;
+  font-weight: 700;
+  margin-left: 3pt;
+  vertical-align: middle;
+}
+
+.sources-page {
+  page-break-before: always;
+}
+
+.sources-list {
+  font-size: 8pt;
+  line-height: 1.6;
+}
+
+.sources-list .source-item {
+  margin-bottom: 1pt;
+  padding-left: 8pt;
+  text-indent: -8pt;
+}
+
+.unverified {
+  background: #f8f4ec;
+  border: 0.5pt dashed #c0b0a0;
+  padding: 5pt;
+  font-size: 8pt;
+  margin-top: 5pt;
+}
+
+.unverified h2 {
+  font-size: 9pt;
+  color: #6b3010;
+  margin-bottom: 2pt;
+}
+
+.unverified li {
+  word-break: break-all;
+  margin-bottom: 1pt;
+  list-style: none;
+}
+
+.disclaimer {
+  font-size: 7pt;
+  color: #777;
+  border-top: 0.5pt solid #c0b0a0;
+  padding-top: 4pt;
+  margin-top: 8pt;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.disclaimer strong {
+  color: #6b3010;
+}

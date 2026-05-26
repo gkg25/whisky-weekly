@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Whisky Weekly 第{{ issue_number }}号</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>{{ css | safe }}</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <span class="masthead-title">Whisky Weekly</span>
+    <span class="masthead-subtitle">ウイスキー業界週報</span>
+  </div>
+  <div class="masthead-meta">
+    <div class="issue">第 {{ issue_number }} 号</div>
+    <div>{{ issue_date }}発行</div>
+    <div>対象期間：{{ period_start }} 〜 {{ period_end }}</div>
+    <div>月光川蒸留所</div>
+  </div>
+</header>
+
+{% if headlines %}
+<section class="headlines">
+  <h2>今週のヘッドライン</h2>
+  <ol>
+    {% for a in headlines %}
+    <li><strong>{{ a.headline_ja }}</strong><span class="source"> — {{ a.source_name }}（{{ a.published_at }}）</span></li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+
+{% if featured %}
+<section class="featured">
+  <div class="featured-label">今週の特集</div>
+  <h3>{{ featured.headline_ja }}</h3>
+  <p class="summary">{{ featured.summary_ja }}</p>
+  {% if featured.key_facts %}
+  <div class="key-facts">
+    {% for fact in featured.key_facts %}<span>{{ fact }}</span>{% endfor %}
+  </div>
+  {% endif %}
+  <div class="meta">
+    出典：<a href="{{ featured.source_url }}">{{ featured.source_name }}</a> / {{ featured.published_at }}
+  </div>
+</section>
+{% endif %}
+
+{% for category, articles in categories.items() %}
+<section class="category-section">
+  <h2 class="section-heading">{{ category }}<span class="count">{{ articles|length }}件</span></h2>
+  <div class="columns">
+    {% for a in articles %}
+    <div class="article-card">
+      <h3>{{ a.headline_ja }}{% if a.is_japanese_whisky_related %}<span class="badge">日本</span>{% endif %}</h3>
+      <p class="summary">{{ a.summary_ja }}</p>
+      <div class="meta">
+        <a href="{{ a.source_url }}">{{ a.source_name }}</a> / {{ a.published_at }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<section class="sources-page">
+  <h2 class="section-heading">本号のソース一覧</h2>
+  <div class="sources-list">
+    {% for src in sources %}
+    <div class="source-item">{{ loop.index }}. {{ src.name }} — <a href="{{ src.url }}">{{ src.url }}</a>（{{ src.date }}）</div>
+    {% endfor %}
+  </div>
+
+  {% if unverified %}
+  <div class="unverified">
+    <h2>※ 未確認情報</h2>
+    <ul>
+      {% for u in unverified %}<li>{{ u }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="disclaimer">
+    <strong>免責：</strong>本ニュースは AI（Google Gemini）が公開情報をもとに自動生成しています。<br>
+    引用・転載の前に、必ず原典をご確認ください。誤情報・要約の誤りについては各原典が優先します。<br>
+    発行：月光川蒸留所株式会社 営業部　&nbsp;|&nbsp;　配信：Whisky Weekly System v1
+  </div>
+</section>
+
+</body>
+</html>
