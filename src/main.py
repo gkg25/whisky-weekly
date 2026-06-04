@@ -18,6 +18,45 @@ from src.pdf_builder import select_articles, render_html, html_to_pdf, load_issu
 from src.mailer import send_email
 
 
+class _Tee:
+    """stdout/stderr をファイルにも同時出力する単純なテキストストリーム複製器。"""
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, data):
+        for s in self.streams:
+            try:
+                s.write(data)
+                s.flush()
+            except Exception:
+                pass
+
+    def flush(self):
+        for s in self.streams:
+            try:
+                s.flush()
+            except Exception:
+                pass
+
+
+def setup_log_file(log_path: Path) -> None:
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    f = open(log_path, "w", encoding="utf-8", buffering=1)
+    sys.stdout = _Tee(sys.__stdout__, f)
+    sys.stderr = _Tee(sys.__stderr__, f)
+
+
+def validate_env(require_send: bool) -> None:
+    required = ["GEMINI_API_KEY"]
+    if require_send:
+        required.extend(["GMAIL_ADDRESS", "GMAIL_APP_PASSWORD", "RECIPIENT_EMAIL"])
+    missing = [v for v in required if not (os.environ.get(v) or "").strip()]
+    if missing:
+        print(f"[FATAL] required environment variables missing: {missing}", file=sys.stderr)
+        print(f"        ローカル: .env を確認。GitHub Actions: Settings → Secrets → Actions で設定。", file=sys.stderr)
+        sys.exit(2)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Whisky Weekly end-to-end pipeline")
     parser.add_argument("--from", dest="since", required=True, help="YYYY-MM-DD")
@@ -25,15 +64,20 @@ def main():
     parser.add_argument("--send", action="store_true", help="生成後にメール送信")
     parser.add_argument("--max", type=int, default=50, help="PDF掲載最大記事数")
     parser.add_argument("--min-score", type=int, default=4)
-    parser.add_argument("--summarize-limit", type=int, default=80, help="Gemini要約する最大記事数")
+    parser.add_argument("--summarize-limit", type=int, default=50, help="Gemini要約する最大記事数")
     parser.add_argument("--output-dir", default="output")
     parser.add_argument("--data-dir", default="data")
+    parser.add_argument("--log-file", default=None, help="stdout/stderr をこのファイルにも複製")
     parser.add_argument("--no-advance-counter", action="store_true")
     parser.add_argument("--no-update-seen", action="store_true")
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
+    if args.log_file:
+        setup_log_file(Path(args.log_file))
+
     load_dotenv()
+    validate_env(require_send=args.send)
 
     since = parse_date_arg(args.since)
     until = end_of_day_utc(parse_date_arg(args.until))

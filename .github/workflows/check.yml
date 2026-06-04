@@ -1,0 +1,60 @@
+name: Whisky Weekly - Health Check
+
+# weekly.yml がスケジュール発火しなかった / すべて失敗した状態を毎週捕捉して通知する。
+# weekly.yml 本体は月曜7:00 JST に走る。その9時間後（火曜 朝8:00 JST = 月曜 23:00 UTC）にチェック。
+
+on:
+  schedule:
+    - cron: '0 23 * * 1'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check last successful weekly run
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DAYS=8
+          CUTOFF=$(date -u -d "$DAYS days ago" '+%Y-%m-%dT%H:%M:%SZ')
+          echo "Cutoff (UTC): $CUTOFF"
+          COUNT=$(gh api "repos/${{ github.repository }}/actions/workflows/weekly.yml/runs?per_page=30" \
+            --jq "[.workflow_runs[] | select(.created_at >= \"$CUTOFF\") | select(.conclusion == \"success\")] | length")
+          echo "Successful runs in last $DAYS days: $COUNT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "::warning::No successful weekly runs in the last $DAYS days"
+            echo "alert=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "alert=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.check.outputs.alert == 'true'
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        if: steps.check.outputs.alert == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install minimal deps
+        if: steps.check.outputs.alert == 'true'
+        run: pip install python-dotenv
+
+      - name: Send heartbeat alert email
+        if: steps.check.outputs.alert == 'true'
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: |
+          python -m src.notifier --mode heartbeat --days 8
