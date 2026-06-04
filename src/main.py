@@ -68,6 +68,8 @@ def main():
     parser.add_argument("--output-dir", default="output")
     parser.add_argument("--data-dir", default="data")
     parser.add_argument("--log-file", default=None, help="stdout/stderr をこのファイルにも複製")
+    parser.add_argument("--subject-prefix", default="", help="メール件名の先頭に付けるテキスト（例: '[テスト送信]'）。手動テスト時に活用")
+    parser.add_argument("--body-note", default="", help="メール本文の冒頭に挟むテキスト（例: '※これはテスト配信です'）")
     parser.add_argument("--no-advance-counter", action="store_true")
     parser.add_argument("--no-update-seen", action="store_true")
     parser.add_argument("--verbose", action="store_true")
@@ -159,7 +161,10 @@ def main():
         if not sender or not password or not recipient_value:
             print("  ERROR: GMAIL_ADDRESS / GMAIL_APP_PASSWORD / RECIPIENT_EMAIL 必須", file=sys.stderr)
             sys.exit(2)
-        body_text = (
+        body_text = ""
+        if args.body_note.strip():
+            body_text += f"{args.body_note.strip()}\n\n---\n\n"
+        body_text += (
             f"Whisky Weekly 第{issue_number}号をお届けします。\n\n"
             f"対象期間: {args.since}〜{args.until}\n"
             f"掲載記事数: {len(selected)}\n\n"
@@ -168,11 +173,16 @@ def main():
         for a in selected[:5]:
             body_text += f"  ・{a.get('headline_ja', '')}\n"
         body_text += f"\n詳細は添付PDFをご覧ください。\n\n本ニュースは AI が公開情報をもとに自動生成しています。"
+
+        prefix = args.subject_prefix.strip()
+        subject_main = f"[Whisky Weekly 第{issue_number}号] {args.since}〜{args.until} 業界ニュース"
+        subject = f"{prefix} {subject_main}".strip() if prefix else subject_main
+
         recipient_list = send_email(
             sender=sender,
             password=password,
             recipients=recipient_value,
-            subject=f"[Whisky Weekly 第{issue_number}号] {args.since}〜{args.until} 業界ニュース",
+            subject=subject,
             body_text=body_text,
             attachments=[pdf_path],
         )

@@ -18,6 +18,14 @@ on:
         description: 'Gemini 要約最大記事数'
         required: false
         default: '50'
+      subject_prefix:
+        description: '件名先頭テキスト（手動テスト用。例：[テスト送信]。自動配信時は空欄推奨）'
+        required: false
+        default: ''
+      body_note:
+        description: '本文冒頭の補足（例：※これはテスト配信です）'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -101,6 +109,8 @@ jobs:
             --from "${{ steps.dates.outputs.from_date }}" \
             --to "${{ steps.dates.outputs.to_date }}" \
             --summarize-limit "${{ inputs.summarize_limit || '50' }}" \
+            --subject-prefix "${{ inputs.subject_prefix || '' }}" \
+            --body-note "${{ inputs.body_note || '' }}" \
             --log-file output/run.log \
             --send
 
