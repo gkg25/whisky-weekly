@@ -14,6 +14,7 @@
     "https://news.google.com/rss/articles/CBMiS0FVX3lxTE05RVJqUjhscmJYbS15WmVSS2ZYaHE2cDJRQW1RSHh3M3N5bFh0TDN0ZWJ2NjhHdWpNdDU1TUlhd2dycGlNQXdqeUUyVQ",
     "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1FZ2d6R1JUX2taLXA4N0pEZ1pzM0U5dEY4WHZ6SnRfZWVSd2E1eFhSaVk3cG9seXI2cFh4T2VxVmduS3ZTbElDV09zTQ",
     "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1GWG5VTTdyVnpabGhjMGd5bmNNRDY2ek05bXJRY3J6LWl5TlJROFZwb19KLUc0MkxGenk0SXV2dVBFeHFGcm1ZSmI4SQ",
+    "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBXYldYbFh6ZDIxWTZKOEZPX3ROSGtWS1YwdHkwVFJyRWNscHhReHVWa29wU2lyN19nb2dORnFsWUFpcUpLOFd4ZVg2bw",
     "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBmY0g1bkxtemI1ZWZyckp0Y3pNWi1RUGRCSm95cEo4TnV0TWhvVGh6VkZSbVZhSTc5Z3ZqOTJmam9FSXZzRk83MlRn",
     "https://news.google.com/rss/articles/CBMiTEFVX3lxTE4wRFFzSFFDZTZzYVU4VUtUMmNPeGVyTkowU0hzS2xBY19uaXp5REpuNmpZeXF1aDhUbXpaZ0xTWEpBX0ZxUE83YmJHTC0",
     "https://news.google.com/rss/articles/CBMiTEFVX3lxTFB2c253S3BXVjZ4RkpxZnh0TjN5VVoyMlhwclYtYzhYYVhQU3JsX3BxWFlWRnpGMDFfWThxVlVxUmc0NGltMDRPc3l2NGo",
@@ -24,6 +25,7 @@
     "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBSZkZXdkRvUWU2UXRreGZKdGY0dy1uOTllaFVBYjctdkZadFJZYVJiMEw0LU1lbUVJT29iaUFKbTR3ZEZtUXR6bWVmbFpXZ0t2RlVJ",
     "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9tc0tKOUh4UnZHbjVxWnNaZF9oVEZqNUd6SkdLTHhVckpQNnJoYmxadXdUNGdYS1JXRUN1bXlFSzNqZ0xST25Bbkk3UThDVkhsS1E",
     "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9HakM0UXhsbjAwaHhXVUQzYXV6V3czUDdTYUJ5THNRNEQ5NlktSjA5THEzME1iNG1zZUR3LTNnb2s2ZzNUTlBERkRsNWtLUHZsLW53Y2l3OA",
+    "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9YVEVCV0VmZnRBSms3T3hSTFM0bC1mNmlGaEoyOE9BUWdlTTM3MXB6Yk8tV3dkVG9zWjhYbHBEeTRpaDZNOGJWUHFJR29lMTRhWmo2c1Qtdw",
     "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBiQU5PYTBSSUh1ZzhpSG1FZ1d0MmZJYWE4R2dFbFNEYmdlazBLZ3B5ODRWbFdiWF9mRTM0TXRBc1kySWFkSzBkMUR2bnhxYnBlOWlCd1NKNA",
     "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBhZVpWbGRXSDBwY21XZGo0NUNsWXpZU3daVHFoMEVnTjAxTmZBUVEtZHJvNGx2aUxHU3pZRGdYeXIxWjA1aGVPN0dYLXhxQVlNWVd1TQ",
     "https://news.google.com/rss/articles/CBMiVkFVX3lxTE00VjY1UDBnaUJqUjVaLUhNRENSVy1EbFgwbXBzY0JPbHFhSHZnOUhYZkRXbFpUdzgtTThnSHJ0bThpNkFwWWRTVDVoUDdUZDlKOFFGQ0N3",
@@ -80,6 +82,7 @@
     "https://news.google.com/rss/articles/CBMigAFBVV95cUxQNlV3RWJ4MlZGeFZkb2ZjMmw1a2tXa25UeFRxVVRoZmJrSUNOYmJBV1BrMXhoTVhNa1dLSHF0bmhjRlVzdkk3QkV6UUtkQmw5REk4TDZSbkdxd0J6dnk4cVBfdV9XRWo1TEI4SG1QampUR0dBS3ktUWkwcTFDSk5OSQ",
     "https://news.google.com/rss/articles/CBMigwFBVV95cUxNaURvemUzRTdPcmQwV2N4NmFEbzNSdlFkWlpLa2VZTXNIMnFraDhwZC1PNFdXMVhtWUx0Y1B6M2duSXdpa24xOWh3ak5GUktrWGRoeHN4TnlwOEFYUU0tOE04T2llWE9yclhmaVJuWE9ib0NaQlRFWGo4bFhTbE4zR3huYw",
     "https://news.google.com/rss/articles/CBMigwJBVV95cUxQQ2ZnU25OdDJJcWxMaEg1ZmRqWDZwSGp4T1NoaVVDOEl3dDc4MUpZNUkzREVhMWxoQUVxZHhqdWJzVlhrSC15TzdKaTYyVmhTcEgwVjlZVWRhX0JBVDJLelpKNkxLZ0lGTDVVaE9RNTh0TWh3b0lTcDZyUDhhc0YtQk83RVlEQlJkeERSOE9XYV9YOTBFMmpYcmo4eEdJaGNaWXhCNEZ1RTlIX1BhTmotdkwwZDc2YjF5a3ZSb0hjTkhadkJrRHBqLWNqWGhCdzIzdkVJam1zQ1lxYmZDLW9iQ2FfTDVaZDlNUGVuZFgzVEZfcC1Sd2dCdTdVX1JXc2VfcWMw",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxOVkhORU9RUXRhNmF4Z1JUSXpPN05TM0h4dkMxMWxvR1Q0S2RmUm11X2ZHV2tjeF82b25OQ1RqY1FmTlFNUmNSUl9ZYmFFcmt3YldkdzRTWnlGcmpkak1DQ29lbmpMdXFYUmM3TFdQM2dTZWVPTVZEcXVRSFdOMkZ5aGJsWHZFZw",
     "https://news.google.com/rss/articles/CBMihgFBVV95cUxOeVVfRE5JWllkV0dYVXpKcnFYa1hpS2t3ZEJieGxDZUN2TWZ3cUpVUW40NkJMV0I0emVqUnlwRV94VGxJaXJ2dHphRzNDSWRBTkl1aGE5eUZvRDZJN0tvRlZSajNtTjEzQ0RnZVBRanFRMkk5Nk5qRjA0VHUxb0dIekVLNDZ5UQ",
     "https://news.google.com/rss/articles/CBMihgJBVV95cUxPZlJBNEoxWEpacjczdUhaLVVuNVRlUk1iczBoa1cyREo5ZHZFNkgxdGZnei0xNXhWa1NTdUpweGlzNXlnVWd2eFRNZzBqSjhnclBYT2F5R1htVTU4Q2RxNFM0dWpiRUVuR0xFcnFFUkNyQ2VyWEE3WnQyS0U5V1A3Smt3VFR4WVlxTXEzczNmX09vNjQxMnJtUUcwUXdSeU9vbkRTX3o1QjQxcHJPOTBBNTNsRFVFTl9mYm92N1JVcjZ3dWFtd2VjWGVSUV9SR0FJUEk4NlQyX21BMENTVlBMTXdweExBQ2J1VnpqU2xaczlMNW9VYWd0OGJ1alEwbHNJVDRwR2p30gGLAkFVX3lxTE1CRjkwMXpiVEFiY2RERUltOVBiV0Z1eTFSS0xTdk1NWjhhbHVQMVNrcFJFSEczNEMwcVAyakhSUWFDRWFKcVl1enJ0QUNzX1NuYkRpUHJlSmx5Y25qbGFORDNfa3c3S2U2ZDgyRFduNm9jWTdERlV4NDB1U01GMWlWcEFGYldsRVpPMEhGWlVNaUQ0QkNfUFdoWEQ4OVo1emxsc3FNNWtWUkFtMmVNeEdCcFlwcU1zeXY4UW1uVzJhRzBjTDQ5S0ppV3lKV1lUMEhfdW0xNjlTNVQyN3FESGI5YXowNjJvQnh4OUFZSkUwQ1A5bDJHQjJiVDJfb0tEWkZETFpGUGNHLTdEMA",
     "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZkNGSmdneVk3SV9RbGxTRERfTG82MWQxYVJhRDVzbzFuTWFHeXA4QWktVUFxQUVmeE91c1M0VHBwUEwwREh0bGVHUTdsY0NwOXhaVGZpYmpPZ3F5eUtsX1RnMHRyTXBia1ZKMkpGTGEzRC1LLThsZk9CU0dOUWJ4RXBpaVBrSEE",
@@ -162,6 +165,11 @@
     "https://thespiritsbusiness.com/2026/06/top-10-award-winning-asian-spirits-3",
     "https://thespiritsbusiness.com/2026/06/top-10-best-selling-world-whisky-brand-champions",
     "https://thespiritsbusiness.com/2026/06/top-10-fastest-growing-spirits-of-2025",
-    "https://whisky777.com/archives/35790"
+    "https://whisky777.com/archives/35790",
+    "https://whisky777.com/archives/36747",
+    "https://whisky777.com/archives/36748",
+    "https://whisky777.com/archives/36749",
+    "https://whisky777.com/archives/36750",
+    "https://whisky777.com/archives/36751"
   ]
 }
